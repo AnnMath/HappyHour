@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/favourites.js"></script>
     <title>Happy Hour</title>
   </head>
   <body>
@@ -29,7 +29,7 @@
             <a href="/">Home</a>
           </li>
           <li class="menu-item flex font-roboto-mono">
-            <a href="/src/html/favourites.html">Favourites</a>
+            <a href="#">Favourites</a>
           </li>
           <li class="menu-item flex font-roboto-mono">
             <a href="">Explore</a>
@@ -50,25 +50,27 @@
           <h1
             class="font-cabin font-bold text-center text-3xl md:text-9xl text-wattle-400"
           >
-            Welcome to Happy Hour!
+            What's your poison?
           </h1>
           <p
             class="w-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
           >
-            Hello, friend! It's always happy hour here! <br />
-            Click on the button below to get 10 random cocktails!
+            You'll find all your favourites here! Not so fond of a cocktail
+            anymore? Click on the heart to remove it from your faves. Cheers!
           </p>
+          <p
+            class="fave-message w-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
+          ></p>
         </div>
         <button
-          class="random-button absolute bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-roboto-mono text-slate-200 bg-persian-pink-600 hover:bg-persian-pink-800 shadow-solid p-1 sm:p-4 active:bg-slate-blue"
+          class="scroll-button absolute bottom-2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-roboto-mono text-slate-200 bg-persian-pink-600 hover:bg-persian-pink-800 shadow-solid p-3 active:bg-slate-blue w-12 h-12 rounded-4xl animate-bounce"
         >
-          Cheers!
+          <i class="ph-fill ph-arrow-down"></i>
         </button>
       </article>
       <article
-        class="random-drinks-container flex flex-wrap justify-around w-full bg-slate-blue md:px-8"
+        class="favourites-container flex flex-wrap justify-around w-full bg-slate-blue md:px-8"
       ></article>
     </main>
-    <footer></footer>
   </body>
 </html>

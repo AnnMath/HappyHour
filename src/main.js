@@ -1,20 +1,10 @@
 import formatDrinks from './utils/formatDrinks.js'
 import createCards from './utils/createCards.js'
 
-document.addEventListener('DOMContentLoaded', () => {
-  const favourites = JSON.parse(localStorage.getItem('favourites')) || []
-})
-
 const randomButton = document.querySelector('.random-button')
 randomButton.addEventListener('click', () => {
   getRandomDrinks()
 })
-
-// const renderCards = (drinks) => {
-//   const container = document.querySelector('.random-drinks-container')
-//   container.innerHTML = drinks.map(createCards).join('')
-//   container.scrollIntoView({ behavior: 'smooth' })
-// }
 
 const renderCards = (drinks) => {
   const favouritesArray = JSON.parse(localStorage.getItem('favourites')) || []
@@ -24,10 +14,9 @@ const renderCards = (drinks) => {
     .map((drink) => {
       const isFavourited = favouritesArray.some((fav) => fav.id === drink.id)
 
-      // Generate the card HTML with the correct heart icon
       return createCards({
         ...drink,
-        isFavourited, // Pass this to the card generator
+        isFavourited, // Pass this to the card generator to show correct heart icon
       })
     })
     .join('')
