@@ -6,7 +6,9 @@ const formatDrinks = (drinks) => {
       const ingredient = drink[`strIngredient${i}`] || ''
       const measure = drink[`strMeasure${i}`] || ''
 
-      ingredients.push(`${measure.trim()} ${ingredient}`.trim())
+      if (ingredient) {
+        ingredients.push(`${measure.trim()} ${ingredient}`.trim())
+      }
     }
     return {
       id: drink.idDrink,

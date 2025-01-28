@@ -1,4 +1,11 @@
-const createCards = ({ id, thumbnail, name, ingredients, instructions }) => {
+const createCards = ({
+  id,
+  thumbnail,
+  name,
+  ingredients,
+  instructions,
+  isFavourited,
+}) => {
   return `       
           <section
             class="card flex flex-col w-96 mt-10 px-4 py-6 border border-deep-blue bg-neutral-100 items-center shadow-solid-big group relative"
@@ -9,7 +16,12 @@ const createCards = ({ id, thumbnail, name, ingredients, instructions }) => {
               class="size-80 group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-sm"
             />
             <img
-              src="/src/img/heart-gray.svg"
+              src=${
+                isFavourited
+                  ? `"/src/img/heart-fill.svg"`
+                  : `"/src/img/heart-gray.svg"`
+              }  
+              
               id="fave-button"
               data-id=${id}
               class="absolute top-10 right-12 h-8 w-8 transition ease-in-out hover:scale-110 hover:cursor-pointer p-1 bg-slate-900/50 rounded-sm"
