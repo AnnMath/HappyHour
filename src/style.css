@@ -43,4 +43,8 @@
   --font-roboto-mono: 'Roboto Mono', serif;
   --font-cabin: 'Cabin Sketch', serif;
   --font-montserrat: 'Montserrat', serif;
+
+  /*** SHADOWS ***/
+  --shadow-solid: 6px 6px 0px 0px var(--color-deep-blue);
+  --shadow-solid-big: 10px 10px 0px 0px var(--color-deep-blue);
 }
