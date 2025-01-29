@@ -1,5 +1,6 @@
 import formatDrinks from './utils/formatDrinks.js'
 import createCards from './utils/createCards.js'
+import confetti from './utils/confetti.js'
 
 const randomButton = document.querySelector('.random-button')
 randomButton.addEventListener('click', () => {
@@ -97,3 +98,9 @@ const fetchDrinkById = async (id) => {
     console.error(error.message)
   }
 }
+
+// :)
+document.querySelector('.click-me').addEventListener('click', (e) => {
+  e.preventDefault()
+  confetti()
+})

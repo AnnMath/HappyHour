@@ -8,7 +8,7 @@ const createCards = ({
 }) => {
   return `       
           <section
-            class="card flex flex-col w-96 mt-10 px-4 py-6 border border-deep-blue bg-neutral-100 items-center shadow-solid-big group relative"
+            class="card flex flex-col w-96 mt-10 px-4 py-6 border border-deep-blue bg-neutral-100 items-center shadow-solid-big group relative my-8"
           >
             <img
               src=${thumbnail}

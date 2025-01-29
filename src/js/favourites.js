@@ -1,4 +1,5 @@
 import createCards from '../utils/createCards.js'
+import confetti from '../utils/confetti.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   checkFavourites()
@@ -58,3 +59,9 @@ const removeFavourite = (id) => {
   localStorage.setItem('favourites', JSON.stringify(updatedArray))
   checkFavourites()
 }
+
+// :)
+document.querySelector('.click-me').addEventListener('click', (e) => {
+  e.preventDefault()
+  confetti()
+})
