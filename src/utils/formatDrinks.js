@@ -1,3 +1,4 @@
+// Format the drink object to only have relevant data
 const formatDrinks = (drinks) => {
   return drinks.map((drink) => {
     const ingredients = []
