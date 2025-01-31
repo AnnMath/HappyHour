@@ -1,5 +1,5 @@
 import renderCards from '../utils/renderCards.js'
-import confetti from '../utils/confetti.js'
+import makeItRain from '../utils/confetti.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   checkFavourites()
@@ -47,5 +47,5 @@ const removeFavourite = (id) => {
 // :)
 document.querySelector('.click-me').addEventListener('click', (e) => {
   e.preventDefault()
-  confetti()
+  makeItRain()
 })

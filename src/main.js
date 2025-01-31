@@ -1,8 +1,7 @@
 import formatDrinks from './utils/formatDrinks.js'
 import renderCards from './utils/renderCards.js'
-import confetti from './utils/confetti.js'
-import { fetchRandom } from './utils/api.js'
-import { fetchDrinkById } from './utils/api.js'
+import makeItRain from './utils/confetti.js'
+import { fetchRandom, fetchDrinkById } from './utils/api.js'
 import addToFaves from './utils/addToFaves.js'
 
 // Get a random selection of 10 cocktails on button click
@@ -38,5 +37,5 @@ const getDrinkById = async (id) => {
 // :)
 document.querySelector('.click-me').addEventListener('click', (e) => {
   e.preventDefault()
-  confetti()
+  makeItRain()
 })

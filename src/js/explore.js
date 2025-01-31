@@ -3,7 +3,7 @@ import {
   fetchIngredient,
   fetchDrinkById,
 } from '../utils/api'
-import confetti from '../utils/confetti'
+import makeItRain from '../utils/confetti'
 import formatDrinks from '../utils/formatDrinks'
 import renderCards from '../utils/renderCards'
 import addToFaves from '../utils/addToFaves'
@@ -85,7 +85,8 @@ const getDrinkById = async (id) => {
   addToFaves(cocktail)
 }
 
+// :)
 document.querySelector('.click-me').addEventListener('click', (e) => {
   e.preventDefault()
-  confetti()
+  makeItRain()
 })
