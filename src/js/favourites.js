@@ -1,25 +1,9 @@
-import createCards from '../utils/createCards.js'
+import renderCards from '../utils/renderCards.js'
 import confetti from '../utils/confetti.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   checkFavourites()
 })
-
-const renderCards = () => {
-  const favouritesArray = JSON.parse(localStorage.getItem('favourites')) || []
-
-  const container = document.querySelector('.favourites-container')
-  container.innerHTML = favouritesArray
-    .map((drink) => {
-      const isFavourited = favouritesArray.some((fav) => fav.id === drink.id)
-
-      return createCards({
-        ...drink,
-        isFavourited,
-      })
-    })
-    .join('')
-}
 
 const checkFavourites = () => {
   const favouritesArray = JSON.parse(localStorage.getItem('favourites')) || []
@@ -33,7 +17,7 @@ const checkFavourites = () => {
 
   if (favouritesArray.length === 0) {
     faveMessage.textContent =
-      "You don't have any favourites yet :( Try the randomiser!"
+      "You don't have any favourites yet :( Try the randomiser or click on the explore tab to find your next drink!"
     scrollbutton.classList.add('invisible')
   } else {
     faveMessage.textContent = `Yay! You've faved ${favouritesArray.length} ${
@@ -41,7 +25,7 @@ const checkFavourites = () => {
     } so far!`
     scrollbutton.classList.remove('invisible')
   }
-  renderCards()
+  renderCards(favouritesArray, favouritesContainer)
 }
 
 document

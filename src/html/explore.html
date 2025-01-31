@@ -12,7 +12,7 @@
       rel="stylesheet"
     />
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="/src/js/explore.js"></script>
     <title>Happy Hour</title>
   </head>
   <body>
@@ -26,7 +26,7 @@
         /></a>
         <menu class="menu text-slate-200 flex justify-around mx-auto md:w-md">
           <li
-            class="menu-item flex font-roboto-mono sm:p-2 bg-deep-blue/30 rounded-md"
+            class="menu-item flex font-roboto-mono sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
           >
             <a href="/">🏠 Home</a>
           </li>
@@ -36,9 +36,9 @@
             <a href="/src/html/favourites.html">🩷 Favourites</a>
           </li>
           <li
-            class="menu-item flex font-roboto-mono sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
+            class="menu-item flex font-roboto-mono sm:p-2 bg-deep-blue/30 rounded-md"
           >
-            <a href="/src/html/explore.html">🔍 Explore</a>
+            <a href="">🔍 Explore</a>
           </li>
         </menu>
       </nav>
@@ -56,23 +56,57 @@
           <h1
             class="font-cabin font-bold text-center text-3xl md:text-9xl text-wattle-400"
           >
-            Welcome to Happy Hour!
+            Explore...
           </h1>
           <p
             class="w-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
           >
-            Hello, friend! It's always happy hour here! <br />
-            Click on the button below to get 10 random cocktails!
+            Know exactly what you want? Search for a cocktail by its name.
           </p>
-          <button
-            class="random-button font-roboto-mono text-slate-200 bg-persian-pink-600 hover:bg-persian-pink-800 shadow-solid p-1 sm:p-4 active:bg-slate-blue mt-20"
+          <p
+            class="-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
           >
-            Cheers!
-          </button>
+            Curious about what goes into you favourite drinks? Search an
+            ingredient and learn somthing new!
+          </p>
+          <form
+            id="search-form"
+            action=""
+            class="flex flex-col sm:flex-row mt-16"
+          >
+            <label class="hidden" for="search-input"
+              >Search cocktail or ingredient</label
+            >
+            <input
+              type="text"
+              id="search-input"
+              name="search"
+              autocomplete="off"
+              required
+              class="bg-wattle-50 sm:w-100 p-2 mr-0 border-t-2 border-b-2 border-l-2 border-r-2 sm:border-r-0 border-persian-pink-800 font-roboto-mono"
+            />
+            <select
+              name="search-by"
+              id="search-by"
+              class="bg-wattle-100 p-2.5 font-roboto-mono border-t-2 border-b-2 border-r-2 border-l-2 sm:border-l-0 border-persian-pink-800"
+            >
+              <option value="search-name">Search by cocktail name</option>
+              <option value="search-ingredient">Search ingredient</option>
+            </select>
+            <button
+              type="submit"
+              class="submit-btn font-roboto-mono text-slate-200 self-center p-2.5 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-500 ms-2"
+            >
+              Search
+            </button>
+          </form>
+          <p
+            class="none-found full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
+          ></p>
         </div>
       </article>
       <article
-        class="random-drinks-container flex flex-wrap justify-around w-full bg-slate-blue md:px-8"
+        class="explore-container flex flex-wrap justify-around w-full bg-slate-blue md:px-8"
       ></article>
     </main>
     <footer
@@ -99,5 +133,26 @@
         </ul>
       </section>
     </footer>
+    <dialog
+      class="ingredient-dialog max-h-200 sm:w-1/2 sm:max-h-9/10 mt-16 bg-persian-pink-50 rounded-2xl p-8 overflow-scroll mx-auto backdrop:bg-deep-blue/50 backdrop:backdrop-blur-sm"
+    >
+      <button
+        class="close-button-top absolute top-4 right-4 ont-roboto-mono text-slate-200 bg-persian-pink-600 hover:bg-persian-pink-800 shadow-solid p-3 active:bg-slate-blue w-12 h-12 rounded-4xl"
+      >
+        <i class="ph ph-x"></i>
+      </button>
+      <h1
+        class="ingredient-heading font-cabin text-8xl text-deep-blue text-center mt-12 capitalize"
+      ></h1>
+      <p
+        class="alcoholic font-montserrat font-bold text-sm text-persian-pink-900 uppercase text-center py-2"
+      ></p>
+      <p class="ingredient-desc font-roboto-mono"></p>
+      <button
+        class="close-button-bottom font-roboto-mono text-slate-200 bg-persian-pink-600 hover:bg-persian-pink-800 shadow-solid p-1 sm:p-3 active:bg-slate-blue mt-3"
+      >
+        Close
+      </button>
+    </dialog>
   </body>
 </html>
