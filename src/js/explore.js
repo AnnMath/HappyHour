@@ -38,7 +38,7 @@ const renderIngredient = (ingredient) => {
 
   ingredientHeading.textContent = ingredient.strIngredient
   isAlcoholic.textContent = `Alcoholic? ${ingredient.strAlcohol}`
-  ingredientDesc.innerHTML = ingredient.strDescription
+  ingredientDesc.textContent = ingredient.strDescription
   closeButtonTop.addEventListener('click', () => ingredientDialog.close())
   closeButtonBottom.addEventListener('click', () => ingredientDialog.close())
   ingredientDialog.showModal()

@@ -4,11 +4,14 @@ const formatDrinks = (drinks) => {
     const ingredients = []
 
     for (let i = 1; i <= 15; i++) {
-      const ingredient = drink[`strIngredient${i}`] || ''
-      const measure = drink[`strMeasure${i}`] || ''
+      // using optional chaining here to make sure that trim() isn't called on 'null'
+      // using nullish coalescing to ensure that if strMeasure is null or undefined, it is replaced with an empty string
+      const ingredient = drink[`strIngredient${i}`]?.trim() ?? ''
+      const measure = drink[`strMeasure${i}`]?.trim() ?? ''
 
+      // As far as I can tell, there is always at least one strIngredient, but sometimes fewer measures than ingredients, or no measures at all
       if (ingredient) {
-        ingredients.push(`${measure.trim()} ${ingredient}`.trim())
+        ingredients.push(`${measure} ${ingredient}`.trim())
       }
     }
     return {
