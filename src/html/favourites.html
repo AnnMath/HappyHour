@@ -17,28 +17,30 @@
   </head>
   <body>
     <header>
-      <nav class="bg-slate-blue w-full py-4">
+      <nav class="bg-slate-blue w-full py-4 flex flex-col items-center">
         <a href="/"
           ><img
-            class="w-64 mx-auto my-4"
+            class="w-64 my-4"
             src="/src/img/happy-hour-logo.svg"
             alt="Happy hour logo"
         /></a>
-        <menu class="menu text-slate-200 flex justify-around mx-auto md:w-md">
+        <menu class="menu text-slate-200 flex justify-around md:w-md">
           <li
-            class="menu-item flex font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
+            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
           >
-            <a href="/">🏠 Home</a>
+            <a href="/" aria-label="home">🏠 Home</a>
           </li>
           <li
-            class="menu-item flex font-roboto-mono p-1 sm:p-2 bg-deep-blue/30 rounded-md"
+            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/30 rounded-md"
           >
-            <a href="/src/html/favourites.html">🩷 Favourites</a>
+            <a href="/src/html/favourites.html" aria-label="favourites"
+              >🩷 Favourites</a
+            >
           </li>
           <li
-            class="menu-item flex font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
+            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
           >
-            <a href="/src/html/explore.html">🔍 Explore</a>
+            <a href="/src/html/explore.html" aria-label="explore">🔍 Explore</a>
           </li>
         </menu>
       </nav>
@@ -68,7 +70,9 @@
             class="fave-message w-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
           ></p>
           <button
-            class="scroll-button font-roboto-mono text-slate-200 bg-persian-pink-600 hover:bg-persian-pink-800 shadow-solid p-3 active:bg-slate-blue w-12 h-12 rounded-4xl animate-bounce mt-20"
+            id="scroll-button"
+            aria-label="Scroll to favourites"
+            class="scroll-button font-roboto-mono text-slate-200 bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid p-3 active:bg-slate-blue w-12 h-12 rounded-4xl animate-bounce mt-20"
           >
             <i class="ph-fill ph-arrow-down"></i>
           </button>
@@ -82,23 +86,30 @@
       class="footer w-full flex flex-col sm:flex-row justify-between p-16 bg-wattle-500"
     >
       <section class="about flex flex-col mb-4 sm:mb-0">
-        <a href="/"
-          ><img src="/src/img/happy-hour-logo-slate.svg" alt="" class="w-60"
+        <a href="/" aria-label="home"
+          ><img
+            src="/src/img/happy-hour-logo-slate.svg"
+            alt="Happy Hour logo"
+            class="w-60"
         /></a>
         <p class="font-cabin text-xl my-4">Made in GBG by Ann 👩🏾 and Cate 🐈‍⬛</p>
         <button
-          class="click-me font-roboto-mono text-xs text-slate-200 self-start p-2 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-600"
+          class="click-me font-roboto-mono text-xs text-slate-200 self-start p-2 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700"
         >
           Click me :)
         </button>
       </section>
       <section class="links font-roboto-mono font-bold">
         <ul class="">
-          <li class="mb-2"><a href="/">Home</a></li>
+          <li class="mb-2"><a href="/" aria-label="home">Home</a></li>
           <li class="mb-2">
-            <a href="/src/html/favourites.html">Favourites</a>
+            <a href="/src/html/favourites.html" aria-label="favourites"
+              >Favourites</a
+            >
           </li>
-          <li class=""><a href="/src/html/explore.html">Explore</a></li>
+          <li class="">
+            <a href="/src/html/explore.html" aria-label="explore">Explore</a>
+          </li>
         </ul>
       </section>
     </footer>

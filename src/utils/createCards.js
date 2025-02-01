@@ -23,6 +23,13 @@ const createCards = ({
               }  
               
               id="fave-button"
+              tabindex=0
+              role="button"
+              aria-label=${
+                isFavourited
+                  ? `"remove ${name} from favourites"`
+                  : `"add ${name} to favourites"`
+              }
               data-id=${id}
               class="absolute top-10 right-12 h-8 w-8 transition ease-in-out hover:scale-110 hover:cursor-pointer p-1 bg-slate-900/50 rounded-sm"
               alt=""

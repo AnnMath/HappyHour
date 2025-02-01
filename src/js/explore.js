@@ -39,9 +39,17 @@ const renderIngredient = (ingredient) => {
   ingredientHeading.textContent = ingredient.strIngredient
   isAlcoholic.textContent = `Alcoholic? ${ingredient.strAlcohol}`
   ingredientDesc.textContent = ingredient.strDescription
-  closeButtonTop.addEventListener('click', () => ingredientDialog.close())
-  closeButtonBottom.addEventListener('click', () => ingredientDialog.close())
+  closeButtonTop.addEventListener('click', () => {
+    ingredientDialog.close()
+    document.body.classList.remove('overflow-y-hidden')
+  })
+  closeButtonBottom.addEventListener('click', () => {
+    ingredientDialog.close()
+    document.body.classList.remove('overflow-y-hidden')
+  })
   ingredientDialog.showModal()
+  // stops the annoying scrolling of the background when the modal is open
+  document.body.classList.add('overflow-y-hidden')
 }
 
 const checkIngredient = async (searchString) => {
@@ -53,7 +61,7 @@ const checkIngredient = async (searchString) => {
     const [ingredient] = ingredients
     renderIngredient(ingredient)
   } else {
-    noneFound.textContent = `Sorry, we couldn't find any ingredient with "${searchString}" in its name. Try another search.`
+    noneFound.textContent = `Sorry, we couldn't find any ingredient called "${searchString}". Try another search.`
   }
 }
 

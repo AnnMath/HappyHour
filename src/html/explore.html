@@ -17,28 +17,30 @@
   </head>
   <body>
     <header>
-      <nav class="bg-slate-blue w-full py-4">
+      <nav class="bg-slate-blue w-full py-4 flex flex-col items-center">
         <a href="/"
           ><img
-            class="w-64 mx-auto my-4"
+            class="w-64 my-4"
             src="/src/img/happy-hour-logo.svg"
             alt="Happy hour logo"
         /></a>
-        <menu class="menu text-slate-200 flex justify-around mx-auto md:w-md">
+        <menu class="menu text-slate-200 flex justify-around md:w-md">
           <li
-            class="menu-item flex font-roboto-mono sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
+            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
           >
-            <a href="/">🏠 Home</a>
+            <a href="/" aria-label="home">🏠 Home</a>
           </li>
           <li
-            class="menu-item flex font-roboto-mono sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
+            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md"
           >
-            <a href="/src/html/favourites.html">🩷 Favourites</a>
+            <a href="/src/html/favourites.html" aria-label="favourites"
+              >🩷 Favourites</a
+            >
           </li>
           <li
-            class="menu-item flex font-roboto-mono sm:p-2 bg-deep-blue/30 rounded-md"
+            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/30 rounded-md hover:bg-deep-blue/20"
           >
-            <a href="">🔍 Explore</a>
+            <a href="/src/html/explore.html" aria-label="explore">🔍 Explore</a>
           </li>
         </menu>
       </nav>
@@ -56,7 +58,7 @@
           <h1
             class="font-cabin font-bold text-center text-3xl md:text-9xl text-wattle-400"
           >
-            Explore...
+            Explore a little more...
           </h1>
           <p
             class="w-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
@@ -66,7 +68,7 @@
           <p
             class="-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
           >
-            Curious about what goes into you favourite drinks? Search an
+            Curious about what goes into your favourite drinks? Search an
             ingredient and learn somthing new!
           </p>
           <form
@@ -74,28 +76,31 @@
             action=""
             class="flex flex-col sm:flex-row mt-16"
           >
-            <label class="hidden" for="search-input"
+            <label for="search-input" class="sr-only"
               >Search cocktail or ingredient</label
             >
             <input
               type="text"
               id="search-input"
-              name="search"
+              name="search-input"
               autocomplete="off"
               required
               class="bg-wattle-50 sm:w-100 p-2 mr-0 border-t-2 border-b-2 border-l-2 border-r-2 sm:border-r-0 border-persian-pink-800 font-roboto-mono"
             />
+            <label for="search-by" class="sr-only">Search by</label>
             <select
               name="search-by"
               id="search-by"
               class="bg-wattle-100 p-2.5 font-roboto-mono border-t-2 border-b-2 border-r-2 border-l-2 sm:border-l-0 border-persian-pink-800"
             >
-              <option value="search-name">Search by cocktail name</option>
-              <option value="search-ingredient">Search ingredient</option>
+              <optgroup label="Choose one">
+                <option value="search-name">Search by cocktail name</option>
+                <option value="search-ingredient">Search ingredient</option>
+              </optgroup>
             </select>
             <button
               type="submit"
-              class="submit-btn font-roboto-mono text-slate-200 self-center p-2.5 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-600 ms-2"
+              class="submit-btn font-roboto-mono text-slate-200 self-center p-2.5 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700 ms-2"
             >
               Search
             </button>
@@ -114,22 +119,29 @@
     >
       <section class="about flex flex-col mb-4 sm:mb-0">
         <a href="/"
-          ><img src="/src/img/happy-hour-logo-slate.svg" alt="" class="w-60"
+          ><img
+            src="/src/img/happy-hour-logo-slate.svg"
+            alt="Happy Hour logo"
+            class="w-60"
         /></a>
         <p class="font-cabin text-xl my-4">Made in GBG by Ann 👩🏾 and Cate 🐈‍⬛</p>
         <button
-          class="click-me font-roboto-mono text-xs text-slate-200 self-start p-2 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-600"
+          class="click-me font-roboto-mono text-xs text-slate-200 self-start p-2 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700"
         >
           Click me :)
         </button>
       </section>
       <section class="links font-roboto-mono font-bold">
         <ul class="">
-          <li class="mb-2"><a href="/">Home</a></li>
+          <li class="mb-2"><a href="/" aria-label="home">Home</a></li>
           <li class="mb-2">
-            <a href="/src/html/favourites.html">Favourites</a>
+            <a href="/src/html/favourites.html" aria-label="favourites"
+              >Favourites</a
+            >
           </li>
-          <li class=""><a href="/src/html/explore.html">Explore</a></li>
+          <li class="">
+            <a href="/src/html/explore.html" aria-label="explore">Explore</a>
+          </li>
         </ul>
       </section>
     </footer>
@@ -137,9 +149,9 @@
       class="ingredient-dialog max-h-200 sm:w-1/2 sm:max-h-9/10 mt-16 bg-persian-pink-50 rounded-2xl p-8 overflow-scroll mx-auto backdrop:bg-deep-blue/50 backdrop:backdrop-blur-sm border-2 border-persian-pink-600"
     >
       <button
-        class="close-button-top absolute top-4 right-4 ont-roboto-mono text-slate-200 bg-persian-pink-600 hover:bg-persian-pink-800 shadow-solid p-3 active:bg-slate-blue w-12 h-12 rounded-4xl"
+        class="close-button-top absolute top-4 right-4 ont-roboto-mono text-slate-200 bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid p-3 active:bg-slate-blue w-12 h-12 rounded-4xl"
       >
-        <i class="ph ph-x"></i>
+        <i class="ph ph-x" aria-label="close"></i>
       </button>
       <h1
         class="ingredient-heading font-cabin text-8xl text-deep-blue text-center mt-12 capitalize"
@@ -149,7 +161,7 @@
       ></p>
       <p class="ingredient-desc font-roboto-mono whitespace-pre-line"></p>
       <button
-        class="close-button-bottom font-roboto-mono text-slate-200 bg-persian-pink-600 hover:bg-persian-pink-800 shadow-solid p-1 sm:p-3 active:bg-slate-blue mt-3"
+        class="close-button-bottom font-roboto-mono text-slate-200 bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid p-1 sm:p-3 active:bg-slate-blue mt-3"
       >
         Close
       </button>
