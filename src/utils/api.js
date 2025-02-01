@@ -11,7 +11,6 @@ export const fetchRandom = async () => {
     return drinks
   } catch (error) {
     console.error(error.message)
-    return null // Return null or handle errors accordingly
   }
 }
 
