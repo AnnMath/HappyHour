@@ -4,7 +4,7 @@ Happy hour is a website to help inspire your next cockatil evening, night out or
 
 Get a list of ten random coktails, search for a cocktail, search for an ingredient you want to know more about and save the cocktails you love to your favourites.
 
-# Tech
+## Tech
 
 - Dev server - Vite
 
