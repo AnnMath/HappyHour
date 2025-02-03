@@ -1,3 +1,5 @@
+import showApiErrorMessage from './showApiErrorMessage'
+
 export const fetchRandom = async () => {
   const URL =
     'https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php'
@@ -10,6 +12,7 @@ export const fetchRandom = async () => {
     const drinks = result.drinks
     return drinks
   } catch (error) {
+    showApiErrorMessage('fetchDrinksOrIngredientsError')
     console.error(error.message)
   }
 }
@@ -26,6 +29,7 @@ export const fetchDrinkById = async (id) => {
     const drinks = result.drinks
     return drinks
   } catch (error) {
+    showApiErrorMessage('fetchDrinkByIdError')
     console.error(error.message)
   }
 }
@@ -42,6 +46,7 @@ export const fetchDrinksByName = async (cocktailName) => {
     const drinks = result.drinks
     return drinks
   } catch (error) {
+    showApiErrorMessage('fetchDrinksOrIngredientsError')
     console.error(error.message)
   }
 }
@@ -58,6 +63,7 @@ export const fetchIngredient = async (ingredient) => {
     const ingredients = result.ingredients
     return ingredients
   } catch (error) {
+    showApiErrorMessage('fetchDrinksOrIngredientsError')
     console.error(error.message)
   }
 }
