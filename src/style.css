@@ -32,9 +32,6 @@
   --color-persian-pink-900: oklch(0.408 0.153 350.4);
   --color-persian-pink-950: oklch(0.284 0.109 350.4);
 
-  /* Picton blue */
-  --color-picton-blue: oklch(0.714 0.1096 243.67);
-
   /* Slate blue */
   --color-slate-blue: oklch(47.95% 0.0658 281.45);
 
@@ -47,4 +44,5 @@
   /*** SHADOWS ***/
   --shadow-solid: 6px 6px 0px 0px var(--color-deep-blue);
   --shadow-solid-big: 10px 10px 0px 0px var(--color-deep-blue);
+  --shadow-dark-mode: 10px 10px 0px 0px var(--color-persian-pink-950);
 }

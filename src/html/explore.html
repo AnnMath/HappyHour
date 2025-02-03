@@ -74,7 +74,7 @@
           <form
             id="search-form"
             action=""
-            class="flex flex-col sm:flex-row mt-16"
+            class="flex flex-col gap-3 md:flex-row md:gap-0 mt-16"
           >
             <label for="search-input" class="sr-only"
               >Search cocktail or ingredient</label
@@ -146,7 +146,7 @@
       </section>
     </footer>
     <dialog
-      class="ingredient-dialog max-h-200 sm:w-1/2 sm:max-h-9/10 mt-16 bg-persian-pink-50 rounded-2xl p-8 overflow-scroll mx-auto backdrop:bg-deep-blue/50 backdrop:backdrop-blur-sm border-2 border-persian-pink-600"
+      class="ingredient-dialog max-h-200 sm:w-1/2 sm:max-h-9/10 mt-16 bg-persian-pink-50 dark:bg-slate-800 rounded-2xl p-8 overflow-scroll mx-auto backdrop:bg-deep-blue/50 backdrop:backdrop-blur-sm border-2 border-persian-pink-600 dark:border-persian-pink-900"
     >
       <button
         class="close-button-top absolute top-4 right-4 ont-roboto-mono text-slate-200 bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid p-3 active:bg-slate-blue w-12 h-12 rounded-4xl"
@@ -154,12 +154,14 @@
         <i class="ph ph-x" aria-label="close"></i>
       </button>
       <h1
-        class="ingredient-heading font-cabin text-8xl text-deep-blue text-center mt-12 capitalize"
+        class="ingredient-heading font-cabin text-8xl text-deep-blue dark:text-slate-200 text-center mt-12 capitalize"
       ></h1>
       <p
-        class="alcoholic font-montserrat font-bold text-sm text-persian-pink-900 uppercase text-center py-2"
+        class="alcoholic font-montserrat font-bold text-sm text-persian-pink-900 dark:text-persian-pink-300 uppercase text-center py-2"
       ></p>
-      <p class="ingredient-desc font-roboto-mono whitespace-pre-line"></p>
+      <p
+        class="ingredient-desc font-roboto-mono whitespace-pre-line dark:text-slate-200"
+      ></p>
       <button
         class="close-button-bottom font-roboto-mono text-slate-200 bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid p-1 sm:p-3 active:bg-slate-blue mt-3"
       >
