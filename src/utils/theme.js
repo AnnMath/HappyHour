@@ -1,8 +1,10 @@
 document.addEventListener('DOMContentLoaded', () => {
   const themeRadios = document.querySelectorAll("input[name='theme-select']")
   const root = document.documentElement
+  const isDark = window.matchMedia('(prefers-color-scheme: dark)')
 
   const applyTheme = (theme) => {
+    isDark.removeEventListener('change', handleSystemThemeChange)
     if (theme === 'dark') {
       root.classList.add('dark')
       localStorage.setItem('theme', 'dark')
@@ -12,11 +14,23 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       // OS preference
       localStorage.removeItem('theme')
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        root.classList.add('dark')
-      } else {
-        root.classList.remove('dark')
-      }
+      syncWithSystemTheme()
+      isDark.addEventListener('change', handleSystemThemeChange) // Listen for OS changes
+    }
+  }
+
+  const syncWithSystemTheme = () => {
+    if (isDark.matches) {
+      root.classList.add('dark')
+    } else {
+      root.classList.remove('dark')
+    }
+  }
+
+  const handleSystemThemeChange = () => {
+    if (!localStorage.getItem('theme')) {
+      // Only update if 'system' is selected ie. no theme is saved in localStorage
+      syncWithSystemTheme()
     }
   }
 
@@ -37,6 +51,10 @@ document.addEventListener('DOMContentLoaded', () => {
   themeRadios.forEach((radio) => {
     radio.addEventListener('change', () => applyTheme(radio.id))
   })
+
+  if (!localStorage.getItem('theme')) {
+    isDark.addEventListener('change', handleSystemThemeChange) // Only fires if 'system' is checked *on page load*
+  }
 
   // Load the theme on page load
   loadTheme()
