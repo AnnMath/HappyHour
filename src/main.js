@@ -18,6 +18,7 @@ const getRandomDrinks = async () => {
   container.scrollIntoView({ behavior: 'smooth' })
 }
 
+// Event listener for the 'heart' button
 document
   .querySelector('.random-drinks-container')
   .addEventListener('click', (event) => {

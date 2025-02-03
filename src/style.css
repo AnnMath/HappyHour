@@ -1,5 +1,9 @@
 @import 'tailwindcss';
 
+/*** DARK/LIGHT THEME ***/
+/* dark:* utilities applied when "dark" class is set on <html> element instead of using prefers-color-scheme */
+@custom-variant dark (&:where(.dark, .dark *));
+
 @theme {
   /*** COLORS ***/
 
@@ -44,5 +48,4 @@
   /*** SHADOWS ***/
   --shadow-solid: 6px 6px 0px 0px var(--color-deep-blue);
   --shadow-solid-big: 10px 10px 0px 0px var(--color-deep-blue);
-  --shadow-dark-mode: 10px 10px 0px 0px var(--color-persian-pink-950);
 }

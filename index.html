@@ -13,6 +13,7 @@
     />
     <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
     <script type="module" src="/src/main.js"></script>
+    <script src="/src/utils/theme.js"></script>
     <title>Happy Hour</title>
   </head>
   <body>
@@ -108,6 +109,52 @@
             <a href="/src/html/explore.html" aria-label="explore">Explore</a>
           </li>
         </ul>
+        <section
+          class="theme-select w-fit flex justify-center gap-0.5 bg-wattle-300 dark:bg-wattle-950 rounded-sm mt-1 py-0.5"
+        >
+          <div>
+            <input
+              type="radio"
+              id="light"
+              name="theme-select"
+              class="hidden peer"
+            />
+            <label
+              for="light"
+              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 p-1 rounded-sm"
+            >
+              <i class="ph ph-sun"></i>
+            </label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="dark"
+              name="theme-select"
+              class="hidden peer"
+            />
+            <label
+              for="dark"
+              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 p-1 rounded-sm"
+            >
+              <i class="ph ph-moon"></i>
+            </label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="system"
+              name="theme-select"
+              class="hidden peer"
+            />
+            <label
+              for="system"
+              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 p-1 rounded-sm"
+            >
+              <i class="ph ph-monitor"></i>
+            </label>
+          </div>
+        </section>
       </section>
     </footer>
     <dialog
