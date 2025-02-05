@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,28 +18,28 @@
   </head>
   <body>
     <header>
-      <nav class="bg-slate-blue w-full py-4 flex flex-col items-center">
+      <nav class="bg-slate-blue flex w-full flex-col items-center py-4">
         <a href="/"
           ><img
-            class="w-64 my-4"
+            class="my-4 w-64"
             src="/src/img/happy-hour-logo.svg"
             alt="Happy hour logo"
         /></a>
-        <menu class="menu text-slate-200 flex justify-around md:w-md">
+        <menu class="menu flex justify-around text-slate-200 md:w-md">
           <li
-            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
+            class="menu-item font-roboto-mono bg-deep-blue/10 hover:bg-deep-blue/20 rounded-md p-1 sm:p-2"
           >
             <a href="/" aria-label="home">🏠 Home</a>
           </li>
           <li
-            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/30 rounded-md"
+            class="menu-item font-roboto-mono bg-deep-blue/30 rounded-md p-1 sm:p-2"
           >
             <a href="/src/html/favourites.html" aria-label="favourites"
               >⭐️ My drinks</a
             >
           </li>
           <li
-            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
+            class="menu-item font-roboto-mono bg-deep-blue/10 hover:bg-deep-blue/20 rounded-md p-1 sm:p-2"
           >
             <a href="/src/html/explore.html" aria-label="explore">🔍 Explore</a>
           </li>
@@ -49,55 +49,55 @@
     <main class="content">
       <article class="hero relative h-screen w-full">
         <img
-          class="hero-image absolute inset-0 w-full h-full object-cover"
+          class="hero-image absolute inset-0 h-full w-full object-cover"
           src="/src/img/background-img.jpg"
           alt=""
         />
         <div
-          class="absolute w-full h-full top-0 left-0 bg-slate-900/50 flex flex-col justify-start items-center p-10"
+          class="absolute top-0 left-0 flex h-full w-full flex-col items-center justify-start bg-slate-900/50 p-10"
         >
           <h1
-            class="font-cabin font-bold text-center text-3xl md:text-9xl text-wattle-400"
+            class="font-cabin text-wattle-400 text-center text-3xl font-bold md:text-9xl"
           >
             What's your poison?
           </h1>
           <p
-            class="w-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
+            class="font-roboto-mono text-s mt-4 w-full text-center text-slate-200 sm:text-base"
           >
             You'll find all your starred and rated drinks here! Click on the
             star at the top to remove it from your list. Cheers!
           </p>
           <p
-            class="fave-message w-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
+            class="fave-message font-roboto-mono text-s mt-4 w-full text-center text-slate-200 sm:text-base"
           ></p>
           <button
             id="scroll-button"
             aria-label="Scroll to favourites"
-            class="scroll-button font-roboto-mono text-slate-200 bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid p-3 active:bg-slate-blue w-12 h-12 rounded-4xl animate-bounce mt-20"
+            class="scroll-button font-roboto-mono bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid active:bg-slate-blue mt-20 h-12 w-12 animate-bounce rounded-4xl p-3 text-slate-200"
           >
             <i class="ph-fill ph-arrow-down"></i>
           </button>
         </div>
       </article>
       <article
-        class="favourites-container flex flex-wrap justify-around w-full bg-slate-blue md:px-8"
+        class="favourites-container bg-slate-blue flex w-full flex-wrap justify-around md:px-8"
       ></article>
     </main>
     <footer
-      class="footer w-full flex flex-col sm:flex-row justify-between p-16 bg-wattle-500 dark:bg-wattle-900"
+      class="footer bg-wattle-500 dark:bg-wattle-900 flex w-full flex-col justify-between p-16 sm:flex-row"
     >
-      <section class="about flex flex-col mb-4 sm:mb-0">
+      <section class="about mb-4 flex flex-col sm:mb-0">
         <a href="/" aria-label="home"
           ><img
             src="/src/img/happy-hour-logo-slate.svg"
             alt="Happy Hour logo"
             class="w-60"
         /></a>
-        <p class="font-cabin text-xl my-4 dark:text-slate-200">
+        <p class="font-cabin my-4 text-xl dark:text-slate-200">
           Made in GBG by Ann 👩🏾 and Cate 🐈‍⬛
         </p>
         <button
-          class="click-me font-roboto-mono text-xs text-slate-200 self-start p-2 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700"
+          class="click-me font-roboto-mono shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700 self-start p-2 text-xs text-slate-200"
         >
           Click me :)
         </button>
@@ -115,18 +115,18 @@
           </li>
         </ul>
         <section
-          class="theme-select w-fit flex justify-center gap-0.5 bg-wattle-300 dark:bg-wattle-950 rounded-sm mt-1 py-0.5"
+          class="theme-select bg-wattle-300 dark:bg-wattle-950 mt-1 flex w-fit justify-center gap-0.5 rounded-sm py-0.5"
         >
           <div>
             <input
               type="radio"
               id="light"
               name="theme-select"
-              class="hidden peer"
+              class="peer hidden"
             />
             <label
               for="light"
-              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 p-1 rounded-sm"
+              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 rounded-sm p-1"
             >
               <i class="ph ph-sun"></i>
             </label>
@@ -136,11 +136,11 @@
               type="radio"
               id="dark"
               name="theme-select"
-              class="hidden peer"
+              class="peer hidden"
             />
             <label
               for="dark"
-              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 p-1 rounded-sm"
+              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 rounded-sm p-1"
             >
               <i class="ph ph-moon"></i>
             </label>
@@ -150,11 +150,11 @@
               type="radio"
               id="system"
               name="theme-select"
-              class="hidden peer"
+              class="peer hidden"
             />
             <label
               for="system"
-              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 p-1 rounded-sm"
+              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 rounded-sm p-1"
             >
               <i class="ph ph-monitor"></i>
             </label>

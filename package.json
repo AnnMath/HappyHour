@@ -9,11 +9,20 @@
     "preview": "vite preview"
   },
   "devDependencies": {
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
     "vite": "^6.0.5"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.0.0",
     "js-confetti": "^0.12.0",
     "tailwindcss": "^4.0.0"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": true,
+    "plugins": [
+      "prettier-plugin-tailwindcss"
+    ]
   }
 }

@@ -9,12 +9,12 @@ const createCards = ({
 }) => {
   // Who knew you could format template literals? 🧐
   return /* HTML */ ` <section
-    class="card flex flex-col w-96 mt-10 px-4 py-6 border border-deep-blue bg-neutral-100 dark:bg-slate-800 items-center shadow-solid-big  group relative my-8"
+    class="card border-deep-blue shadow-solid-big group relative my-8 mt-10 flex w-96 flex-col items-center border bg-neutral-100 px-4 py-6 dark:bg-slate-800"
   >
     <img
       src=${thumbnail}
       alt=""
-      class="size-80 group-hover:scale-105 transition-transform duration-500 ease-in-out rounded-sm"
+      class="size-80 rounded-sm transition-transform duration-500 ease-in-out group-hover:scale-105"
     />
     <img
       src=${isFavourited
@@ -27,11 +27,11 @@ const createCards = ({
         ? `"remove ${name} from saved"`
         : `"add ${name} to saved"`}
       data-id=${id}
-      class="absolute top-10 right-12 h-8 w-8 transition ease-in-out hover:scale-110 hover:cursor-pointer p-1 bg-slate-900/50 rounded-sm"
+      class="absolute top-10 right-12 h-8 w-8 rounded-sm bg-slate-900/50 p-1 transition ease-in-out hover:scale-110 hover:cursor-pointer"
       alt=""
     />
     <div
-      class="flex items-center absolute top-73 gap-1 left-12 justify-center bg-slate-900/50 text-slate-200 p-2 rounded-sm"
+      class="absolute top-73 left-12 flex items-center justify-center gap-1 rounded-sm bg-slate-900/50 p-2 text-slate-200"
       data-id="${id}"
     >
       ${[1, 2, 3, 4, 5]
@@ -42,15 +42,15 @@ const createCards = ({
           } text-yellow-400 text-xl cursor-pointer"
              data-value="${star}"
              data-id="${id}"></i>
-        `
+        `,
         )
         .join('')}
     </div>
-    <h2 class="cocktail-name text-2xl font-cabin mt-4 dark:text-slate-200">
+    <h2 class="cocktail-name font-cabin mt-4 text-2xl dark:text-slate-200">
       ${name}
     </h2>
     <h3
-      class="ingredients-header font-montserrat text-xs font-bold uppercase text-persian-pink-900 dark:text-persian-pink-300 mt-2"
+      class="ingredients-header font-montserrat text-persian-pink-900 dark:text-persian-pink-300 mt-2 text-xs font-bold uppercase"
     >
       Ingredients
     </h3>
@@ -58,7 +58,7 @@ const createCards = ({
       ${ingredients.map((ingredient) => `<li>${ingredient}</li>`).join('')}
     </ul>
     <h3
-      class="instructions-header font-montserrat text-xs font-bold uppercase text-persian-pink-900 dark:text-persian-pink-300 mt-2"
+      class="instructions-header font-montserrat text-persian-pink-900 dark:text-persian-pink-300 mt-2 text-xs font-bold uppercase"
     >
       Instructions
     </h3>

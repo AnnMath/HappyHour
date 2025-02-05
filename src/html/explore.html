@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -18,28 +18,28 @@
   </head>
   <body>
     <header>
-      <nav class="bg-slate-blue w-full py-4 flex flex-col items-center">
+      <nav class="bg-slate-blue flex w-full flex-col items-center py-4">
         <a href="/"
           ><img
-            class="w-64 my-4"
+            class="my-4 w-64"
             src="/src/img/happy-hour-logo.svg"
             alt="Happy hour logo"
         /></a>
-        <menu class="menu text-slate-200 flex justify-around md:w-md">
+        <menu class="menu flex justify-around text-slate-200 md:w-md">
           <li
-            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md hover:bg-deep-blue/20"
+            class="menu-item font-roboto-mono bg-deep-blue/10 hover:bg-deep-blue/20 rounded-md p-1 sm:p-2"
           >
             <a href="/" aria-label="home">🏠 Home</a>
           </li>
           <li
-            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/10 rounded-md"
+            class="menu-item font-roboto-mono bg-deep-blue/10 rounded-md p-1 sm:p-2"
           >
             <a href="/src/html/favourites.html" aria-label="favourites"
               >⭐️ My drinks</a
             >
           </li>
           <li
-            class="menu-item font-roboto-mono p-1 sm:p-2 bg-deep-blue/30 rounded-md hover:bg-deep-blue/20"
+            class="menu-item font-roboto-mono bg-deep-blue/30 hover:bg-deep-blue/20 rounded-md p-1 sm:p-2"
           >
             <a href="/src/html/explore.html" aria-label="explore">🔍 Explore</a>
           </li>
@@ -49,25 +49,25 @@
     <main class="content">
       <article class="hero relative h-screen w-full">
         <img
-          class="hero-image absolute inset-0 w-full h-full object-cover"
+          class="hero-image absolute inset-0 h-full w-full object-cover"
           src="/src/img/background-img.jpg"
           alt=""
         />
         <div
-          class="absolute w-full h-full top-0 left-0 bg-slate-900/50 flex flex-col justify-start items-center p-10"
+          class="absolute top-0 left-0 flex h-full w-full flex-col items-center justify-start bg-slate-900/50 p-10"
         >
           <h1
-            class="font-cabin font-bold text-center text-3xl md:text-9xl text-wattle-400"
+            class="font-cabin text-wattle-400 text-center text-3xl font-bold md:text-9xl"
           >
             Explore a little more...
           </h1>
           <p
-            class="w-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
+            class="font-roboto-mono text-s mt-4 w-full text-center text-slate-200 sm:text-base"
           >
             Know exactly what you want? Search for a cocktail by its name.
           </p>
           <p
-            class="-full font-roboto-mono text-slate-200 mt-4 text-center text-s sm:text-base"
+            class="-full font-roboto-mono text-s mt-4 text-center text-slate-200 sm:text-base"
           >
             Curious about what goes into your favourite drinks? Search an
             ingredient and learn somthing new!
@@ -75,7 +75,7 @@
           <form
             id="search-form"
             action=""
-            class="flex flex-col gap-3 md:flex-row md:gap-0 mt-16"
+            class="mt-16 flex flex-col gap-3 md:flex-row md:gap-0"
           >
             <label for="search-input" class="sr-only"
               >Search cocktail or ingredient</label
@@ -86,13 +86,13 @@
               name="search-input"
               autocomplete="off"
               required
-              class="bg-wattle-50 sm:w-100 p-2 mr-0 border-t-2 border-b-2 border-l-2 border-r-2 sm:border-r-0 border-persian-pink-800 font-roboto-mono"
+              class="bg-wattle-50 border-persian-pink-800 font-roboto-mono mr-0 border-t-2 border-r-2 border-b-2 border-l-2 p-2 sm:w-100 sm:border-r-0"
             />
             <label for="search-by" class="sr-only">Search by</label>
             <select
               name="search-by"
               id="search-by"
-              class="bg-wattle-100 p-2.5 font-roboto-mono border-t-2 border-b-2 border-r-2 border-l-2 sm:border-l-0 border-persian-pink-800"
+              class="bg-wattle-100 font-roboto-mono border-persian-pink-800 border-t-2 border-r-2 border-b-2 border-l-2 p-2.5 sm:border-l-0"
             >
               <optgroup label="Choose one">
                 <option value="search-name">Search by cocktail name</option>
@@ -101,35 +101,35 @@
             </select>
             <button
               type="submit"
-              class="submit-btn font-roboto-mono text-slate-200 self-center p-2.5 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700 ms-2"
+              class="submit-btn font-roboto-mono shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700 ms-2 self-center p-2.5 text-slate-200"
             >
               Search
             </button>
           </form>
           <p
-            class="none-found full font-roboto-mono text-persian-pink-200 mt-4 text-center text-s sm:text-base"
+            class="none-found full font-roboto-mono text-persian-pink-200 text-s mt-4 text-center sm:text-base"
           ></p>
         </div>
       </article>
       <article
-        class="explore-container flex flex-wrap justify-around w-full bg-slate-blue md:px-8"
+        class="explore-container bg-slate-blue flex w-full flex-wrap justify-around md:px-8"
       ></article>
     </main>
     <footer
-      class="footer w-full flex flex-col sm:flex-row justify-between p-16 bg-wattle-500 dark:bg-wattle-900"
+      class="footer bg-wattle-500 dark:bg-wattle-900 flex w-full flex-col justify-between p-16 sm:flex-row"
     >
-      <section class="about flex flex-col mb-4 sm:mb-0">
+      <section class="about mb-4 flex flex-col sm:mb-0">
         <a href="/"
           ><img
             src="/src/img/happy-hour-logo-slate.svg"
             alt="Happy Hour logo"
             class="w-60"
         /></a>
-        <p class="font-cabin text-xl my-4 dark:text-slate-200">
+        <p class="font-cabin my-4 text-xl dark:text-slate-200">
           Made in GBG by Ann 👩🏾 and Cate 🐈‍⬛
         </p>
         <button
-          class="click-me font-roboto-mono text-xs text-slate-200 self-start p-2 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700"
+          class="click-me font-roboto-mono shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700 self-start p-2 text-xs text-slate-200"
         >
           Click me :)
         </button>
@@ -147,18 +147,18 @@
           </li>
         </ul>
         <section
-          class="theme-select w-fit flex justify-center gap-0.5 bg-wattle-300 dark:bg-wattle-950 rounded-sm mt-1 py-0.5"
+          class="theme-select bg-wattle-300 dark:bg-wattle-950 mt-1 flex w-fit justify-center gap-0.5 rounded-sm py-0.5"
         >
           <div>
             <input
               type="radio"
               id="light"
               name="theme-select"
-              class="hidden peer"
+              class="peer hidden"
             />
             <label
               for="light"
-              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 p-1 rounded-sm"
+              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 rounded-sm p-1"
             >
               <i class="ph ph-sun"></i>
             </label>
@@ -168,11 +168,11 @@
               type="radio"
               id="dark"
               name="theme-select"
-              class="hidden peer"
+              class="peer hidden"
             />
             <label
               for="dark"
-              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 p-1 rounded-sm"
+              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 rounded-sm p-1"
             >
               <i class="ph ph-moon"></i>
             </label>
@@ -182,11 +182,11 @@
               type="radio"
               id="system"
               name="theme-select"
-              class="hidden peer"
+              class="peer hidden"
             />
             <label
               for="system"
-              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 p-1 rounded-sm"
+              class="peer-checked:bg-persian-pink-400 dark:peer-checked:bg-persian-pink-800 rounded-sm p-1"
             >
               <i class="ph ph-monitor"></i>
             </label>
@@ -195,34 +195,34 @@
       </section>
     </footer>
     <dialog
-      class="ingredient-dialog max-h-200 sm:w-1/2 sm:max-h-9/10 mt-16 bg-persian-pink-50 dark:bg-slate-800 rounded-2xl p-8 overflow-scroll mx-auto backdrop:bg-deep-blue/50 backdrop:backdrop-blur-sm border-2 border-persian-pink-600 dark:border-persian-pink-900"
+      class="ingredient-dialog bg-persian-pink-50 backdrop:bg-deep-blue/50 border-persian-pink-600 dark:border-persian-pink-900 mx-auto mt-16 max-h-200 overflow-scroll rounded-2xl border-2 p-8 backdrop:backdrop-blur-sm sm:max-h-9/10 sm:w-1/2 dark:bg-slate-800"
     >
       <button
-        class="close-button-top absolute top-4 right-4 ont-roboto-mono text-slate-200 bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid p-3 active:bg-slate-blue w-12 h-12 rounded-4xl"
+        class="close-button-top ont-roboto-mono bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid active:bg-slate-blue absolute top-4 right-4 h-12 w-12 rounded-4xl p-3 text-slate-200"
       >
         <i class="ph ph-x" aria-label="close"></i>
       </button>
       <h1
-        class="ingredient-heading font-cabin text-8xl text-deep-blue dark:text-slate-200 text-center mt-12 capitalize"
+        class="ingredient-heading font-cabin text-deep-blue mt-12 text-center text-8xl capitalize dark:text-slate-200"
       ></h1>
       <p
-        class="alcoholic font-montserrat font-bold text-sm text-persian-pink-900 dark:text-persian-pink-300 uppercase text-center py-2"
+        class="alcoholic font-montserrat text-persian-pink-900 dark:text-persian-pink-300 py-2 text-center text-sm font-bold uppercase"
       ></p>
       <p
         class="ingredient-desc font-roboto-mono whitespace-pre-line dark:text-slate-200"
       ></p>
       <button
-        class="close-button-bottom font-roboto-mono text-slate-200 bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid p-1 sm:p-3 active:bg-slate-blue mt-3"
+        class="close-button-bottom font-roboto-mono bg-persian-pink-700 hover:bg-persian-pink-800 shadow-solid active:bg-slate-blue mt-3 p-1 text-slate-200 sm:p-3"
       >
         Close
       </button>
     </dialog>
     <dialog
-      class="error-dialog mx-auto self-center p-8 font-roboto-mono rounded-xl bg-persian-pink-400 text-center max-w-96"
+      class="error-dialog font-roboto-mono bg-persian-pink-400 mx-auto max-w-96 self-center rounded-xl p-8 text-center"
     >
       <p class="error-dialog__text"></p>
       <button
-        class="error-dialog__closeBtn font-roboto-mono text-xs text-slate-200 p-2 mt-2 shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700"
+        class="error-dialog__closeBtn font-roboto-mono shadow-solid hover:bg-persian-pink-800 bg-persian-pink-700 mt-2 p-2 text-xs text-slate-200"
       >
         Dismiss
       </button>
