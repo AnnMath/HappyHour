@@ -4,7 +4,6 @@ import formatDrinks from './formatDrinks'
 import addToFaves from './addToFaves'
 
 const handleRating = async (event) => {
-  // the eventListener is on the document, as the cards don't exist on the DOM on load. If the target is not a star, do nothing.
   if (!event.target.classList.contains('star')) return
 
   let favouritesArray = JSON.parse(localStorage.getItem('favourites')) || []

@@ -4,7 +4,7 @@ const showApiErrorMessage = (error) => {
   const errorDialogCloseBtn = document.querySelector('.error-dialog__closeBtn')
   errorDialogText.textContent = `Oh no! Something went wrong ${
     error === 'fetchDrinkByIdError'
-      ? `saving to/removing from favourites. `
+      ? `saving to/removing from your drinks. `
       : `on our end. `
   }Please try again later.`
   errorDialog.showModal()
