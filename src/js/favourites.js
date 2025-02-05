@@ -18,7 +18,7 @@ const checkFavourites = () => {
 
   if (favouritesArray.length === 0) {
     faveMessage.textContent =
-      "You don't have any favourites yet :( Try the randomiser or click on the explore tab to find your next drink!"
+      "You don't have any saved cocktails yet :( Try the randomiser or click on the explore tab to find your next drink!"
     scrollbutton.classList.add('invisible')
   } else {
     faveMessage.textContent = `Yay! You've saved ${favouritesArray.length} ${
