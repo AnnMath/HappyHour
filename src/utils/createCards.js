@@ -31,7 +31,7 @@ const createCards = ({
       alt=""
     />
     <div
-      class="flex items-center absolute top-75 gap-1 left-12 justify-center bg-slate-900/50 text-slate-200 p-2 rounded-sm"
+      class="flex items-center absolute top-73 gap-1 left-12 justify-center bg-slate-900/50 text-slate-200 p-2 rounded-sm"
       data-id="${id}"
     >
       ${[1, 2, 3, 4, 5]
