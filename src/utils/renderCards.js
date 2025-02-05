@@ -10,6 +10,7 @@ const renderCards = (drinks, container) => {
       return createCards({
         ...drink,
         isFavourited, // Pass this to the card generator to show correct heart icon
+        rating: drink.rating,
       })
     })
     .join('')

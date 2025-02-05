@@ -1,5 +1,6 @@
 import renderCards from '../utils/renderCards.js'
 import makeItRain from '../utils/confetti.js'
+import handleRating from '../utils/handleRating.js'
 
 document.addEventListener('DOMContentLoaded', () => {
   checkFavourites()
@@ -20,7 +21,7 @@ const checkFavourites = () => {
       "You don't have any favourites yet :( Try the randomiser or click on the explore tab to find your next drink!"
     scrollbutton.classList.add('invisible')
   } else {
-    faveMessage.textContent = `Yay! You've faved ${favouritesArray.length} ${
+    faveMessage.textContent = `Yay! You've saved ${favouritesArray.length} ${
       favouritesArray.length === 1 ? `cocktail` : `cocktails`
     } so far!`
     scrollbutton.classList.remove('invisible')
@@ -33,6 +34,8 @@ document
   .addEventListener('click', (event) => {
     if (event.target.id === 'fave-button') {
       removeFavourite(event.target.dataset.id)
+    } else if (event.target.classList.contains('star')) {
+      handleRating(event)
     } else return
   })
 

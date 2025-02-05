@@ -7,6 +7,7 @@ import makeItRain from '../utils/confetti'
 import formatDrinks from '../utils/formatDrinks'
 import renderCards from '../utils/renderCards'
 import addToFaves from '../utils/addToFaves'
+import handleRating from '../utils/handleRating'
 
 const form = document.querySelector('#search-form')
 const input = document.querySelector('#search-input')
@@ -83,11 +84,13 @@ document
   .querySelector('.explore-container')
   .addEventListener('click', (event) => {
     if (event.target.id === 'fave-button') {
-      getDrinkById(event.target.dataset.id)
+      getDrinkByIdForFaves(event.target.dataset.id)
+    } else if (event.target.classList.contains('star')) {
+      handleRating(event)
     } else return
   })
 
-const getDrinkById = async (id) => {
+const getDrinkByIdForFaves = async (id) => {
   const drinks = await fetchDrinkById(id)
   const cocktail = formatDrinks(drinks)
   addToFaves(cocktail)

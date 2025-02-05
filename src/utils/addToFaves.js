@@ -1,4 +1,5 @@
-import updateHeartColour from './updateHeartColour'
+import updateStarColour from './updateStarColour'
+import updateStarsUI from './updateStarsUI'
 
 const addToFaves = (cocktail) => {
   const favouritesArray = JSON.parse(localStorage.getItem('favourites')) || []
@@ -10,13 +11,17 @@ const addToFaves = (cocktail) => {
   if (isFavourited) {
     // Remove from favourites
     const updatedFaves = favouritesArray.filter((fav) => fav.id !== drink.id)
+    drink.isFavourited = false
+    drink.rating = 0
     localStorage.setItem('favourites', JSON.stringify(updatedFaves))
   } else {
     // Add to favourites
+    drink.isFavourited = true
     favouritesArray.push(drink)
     localStorage.setItem('favourites', JSON.stringify(favouritesArray))
   }
-  updateHeartColour(drink.id, !isFavourited)
+  updateStarColour(drink.id, !isFavourited)
+  updateStarsUI(drink.id, drink.rating)
 }
 
 export default addToFaves

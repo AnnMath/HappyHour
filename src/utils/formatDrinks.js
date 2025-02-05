@@ -1,6 +1,11 @@
 // Format the drink object to only have relevant data
 const formatDrinks = (drinks) => {
+  const favouritesArray = JSON.parse(localStorage.getItem('favourites')) || []
   return drinks.map((drink) => {
+    const isFavourited = favouritesArray.some((fav) => fav.id === drink.idDrink)
+    const favouriteDrink = favouritesArray.find(
+      (fav) => fav.id === drink.idDrink
+    )
     const ingredients = []
 
     for (let i = 1; i <= 15; i++) {
@@ -20,6 +25,8 @@ const formatDrinks = (drinks) => {
       name: drink.strDrink,
       ingredients,
       instructions: drink.strInstructions,
+      isFavourited: isFavourited,
+      rating: favouriteDrink ? favouriteDrink.rating || 0 : 0,
     }
   })
 }

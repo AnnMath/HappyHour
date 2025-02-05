@@ -3,6 +3,7 @@ import renderCards from './utils/renderCards.js'
 import makeItRain from './utils/confetti.js'
 import { fetchRandom, fetchDrinkById } from './utils/api.js'
 import addToFaves from './utils/addToFaves.js'
+import handleRating from './utils/handleRating.js'
 
 // Get a random selection of 10 cocktails on button click
 const randomButton = document.querySelector('.random-button')
@@ -18,18 +19,20 @@ const getRandomDrinks = async () => {
   container.scrollIntoView({ behavior: 'smooth' })
 }
 
-// Event listener for the 'heart' button
+// Event listener for the 'heart' button (and the rating stars)
 document
   .querySelector('.random-drinks-container')
   .addEventListener('click', (event) => {
-    // Use event delegation to check if the clicked element is the heart icon
-    // The heart icon does not exist in the DOM until the cards are created
+    // Use event delegation to check if the clicked element is the star icon (or the rating stars)
+    // The star icon (and the rating stars) does not exist in the DOM until the cards are created
     if (event.target.id === 'fave-button') {
-      getDrinkById(event.target.dataset.id)
+      getDrinkByIdForFaves(event.target.dataset.id)
+    } else if (event.target.classList.contains('star')) {
+      handleRating(event)
     } else return
   })
 
-const getDrinkById = async (id) => {
+const getDrinkByIdForFaves = async (id) => {
   const drinks = await fetchDrinkById(id)
   const cocktail = formatDrinks(drinks)
   addToFaves(cocktail)
