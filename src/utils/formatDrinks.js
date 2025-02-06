@@ -27,7 +27,7 @@ const formatDrinks = (drinks) => {
       instructions: drink.strInstructions,
       isFavourited: isFavourited,
       rating: favouriteDrink ? favouriteDrink.rating || 0 : 0,
-      isAlcoholic: drink.strAlcoholic === 'Alcoholic' ? true : false
+      isAlcoholic: drink.strAlcoholic
     }
   })
 }
