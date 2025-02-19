@@ -37,8 +37,8 @@ const createCards = ({
       class="non-alcoholic-badge  absolute top-70 right-4 flex h-18 w-18 rotate-315 items-center justify-center rounded-full bg-conic/decreasing from-violet-700 via-lime-300 to-violet-700"
     >
       <p
-        class="font-montserrat text-persian-pink-100 text-center text-xs font-bold uppercase [text-shadow:_0_1px_0_rgb(0_0_0_/_40%)]"
-      >${isAlcoholic === `Optional alcohol` ? `Optional alcohol` : ` No<br />alcohol`}  
+        class="font-montserrat text-persian-pink-100 text-center text-xs font-bold uppercase [text-shadow:_0_1px_0_rgb(0_0_0_/_60%)]"
+      >${isAlcoholic === `Optional alcohol` ? `Alcohol optional` : ` No<br />alcohol`}  
       </p>
     </div>
       
